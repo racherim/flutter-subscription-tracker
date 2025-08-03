@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_subscription_tracker/constant/pagestyle.dart';
-import 'package:flutter_subscription_tracker/widgets/custom_appbar_widget.dart';
+import 'package:flutter_subscription_tracker/widgets/custom_appbar.dart';
 import 'package:flutter_subscription_tracker/widgets/main_mobile.dart';
 
 class Home extends StatefulWidget {
@@ -15,8 +15,8 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: PageStyle().backgroundColor,
-      appBar: const CustomAppbarWidget(),
-      body: MainMobile()
+      appBar: const CustomAppbar(),
+      body: MainMobile(),
     );
   }
 }

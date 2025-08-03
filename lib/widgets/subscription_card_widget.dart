@@ -6,8 +6,13 @@ class SubscriptionCardWidget extends StatelessWidget {
   final Color color;
   final String icon;
 
-  const SubscriptionCardWidget({super.key, required this.name, required this.price, required this.color, required this.icon});
-  
+  const SubscriptionCardWidget({
+    super.key,
+    required this.name,
+    required this.price,
+    required this.color,
+    required this.icon,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +39,8 @@ class SubscriptionCardWidget extends StatelessWidget {
                 style: TextStyle(
                   fontSize: icon.length == 1 ? 18 : 12,
                   fontWeight: FontWeight.bold,
-                  color: color == Colors.black || color == Colors.blue[800] 
-                      ? Colors.white 
+                  color: color == Colors.black || color == Colors.blue[800]
+                      ? Colors.white
                       : Colors.black,
                 ),
               ),
@@ -48,8 +53,8 @@ class SubscriptionCardWidget extends StatelessWidget {
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w600,
-              color: color == Colors.black || color == Colors.blue[800] 
-                  ? Colors.white 
+              color: color == Colors.black || color == Colors.blue[800]
+                  ? Colors.white
                   : Colors.black,
             ),
             maxLines: 1,
@@ -61,9 +66,11 @@ class SubscriptionCardWidget extends StatelessWidget {
             '\$${price.toStringAsFixed(2)}',
             style: TextStyle(
               fontSize: 14,
-              color: (color == Colors.black || color == Colors.blue[800] 
-                  ? Colors.white 
-                  : Colors.black).withOpacity(0.7),
+              color:
+                  (color == Colors.black || color == Colors.blue[800]
+                          ? Colors.white
+                          : Colors.black)
+                      .withOpacity(0.7),
             ),
           ),
         ],
