@@ -11,7 +11,6 @@ class MainMobile extends StatefulWidget {
 
 class _MainMobileState extends State<MainMobile> {
   String selectedCategory = 'Video & TV';
-  
   double get totalExpenses {
     return subscriptions.fold(0.0, (sum, subscription) => sum + subscription['price']);
   }
@@ -90,9 +89,7 @@ class _MainMobileState extends State<MainMobile> {
               height: 56,
               margin: const EdgeInsets.symmetric(vertical: 16),
               child: ElevatedButton(
-                onPressed: () {
-                  // Handle add subscription
-                },
+                onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
                   shape: RoundedRectangleBorder(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_subscription_tracker/constant/pagestyle.dart';
 import 'package:flutter_subscription_tracker/pages/home.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: PageStyle().secondaryColor),
       ),
       home: Home(),
     );

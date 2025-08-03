@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_subscription_tracker/constant/pagestyle.dart';
 
 class CustomAppbarWidget extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppbarWidget({super.key});
@@ -7,7 +8,7 @@ class CustomAppbarWidget extends StatelessWidget implements PreferredSizeWidget 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-        backgroundColor: Colors.grey[100],
+        backgroundColor: PageStyle().mainColor,
         elevation: 0,
         leadingWidth: 60,
         actions: [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_subscription_tracker/constant/pagestyle.dart';
 import 'package:flutter_subscription_tracker/widgets/custom_appbar_widget.dart';
 import 'package:flutter_subscription_tracker/widgets/main_mobile.dart';
 
@@ -13,7 +14,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: PageStyle().backgroundColor,
       appBar: const CustomAppbarWidget(),
       body: MainMobile()
     );
