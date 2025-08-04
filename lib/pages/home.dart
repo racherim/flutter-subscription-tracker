@@ -12,6 +12,14 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  Key _gridKey = UniqueKey();
+
+  void _refreshGrid() {
+    setState(() {
+      _gridKey = UniqueKey();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,11 +27,13 @@ class _HomeState extends State<Home> {
       appBar: const CustomAppbar(),
       body: Stack(
         children: [
-          const SubscriptionGridWidget(),
+          SubscriptionGridWidget(key: _gridKey),
           Positioned(
-            bottom: 120,
+            bottom: 80,
             right: 16,
-            child: AddSubscriptionWidget(),
+            child: AddSubscriptionWidget(
+              onSubscriptionAdded: _refreshGrid,
+            ),
           ),
         ],
       ),

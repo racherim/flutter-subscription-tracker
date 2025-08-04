@@ -1,7 +1,14 @@
 class SubscriptionGenres {
   static const List<String> items = [
     'Video & TV',
-    'Digital Goods',
     'Music',
+    'Gaming',
+    'Productivity',
+    'News',
+    'Education',
+    'Shopping',
+    'Health & Fitness',
+    'Food & Drink',
+    'Others',
   ];
 }

@@ -5,6 +5,8 @@ class SubscriptionCardWidget extends StatelessWidget {
   final double price;
   final Color color;
   final String icon;
+  final int? id;
+  final VoidCallback? onDelete;
 
   const SubscriptionCardWidget({
     super.key,
@@ -12,6 +14,8 @@ class SubscriptionCardWidget extends StatelessWidget {
     required this.price,
     required this.color,
     required this.icon,
+    this.id,
+    this.onDelete,
   });
 
   @override
@@ -25,12 +29,11 @@ class SubscriptionCardWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Icon/Logo area
           Container(
             width: 32,
             height: 32,
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.2),
+              color: Colors.white.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Center(
@@ -47,7 +50,6 @@ class SubscriptionCardWidget extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          // Service name
           Text(
             name,
             style: TextStyle(
@@ -70,7 +72,7 @@ class SubscriptionCardWidget extends StatelessWidget {
                   (color == Colors.black || color == Colors.blue[800]
                           ? Colors.white
                           : Colors.black)
-                      .withOpacity(0.7),
+                      .withValues(alpha: 0.7),
             ),
           ),
         ],

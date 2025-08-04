@@ -1,8 +1,24 @@
 class SubscriptionIcons {
   static const List<String> items = [
-    'icon1',
-    'icon2',
-    'icon3',
+    '🎬', // Video & TV
+    '🎵', // Music
+    '🎮', // Gaming
+    '💼', // Productivity
+    '📰', // News
+    '📚', // Education
+    '🛒', // Shopping
+    '💪', // Health & Fitness
+    '🍕', // Food & Drink
+    '📱', // Mobile Apps
+    '💰', // Finance
+    '🚗', // Transportation
+    '☁️', // Cloud Storage
+    '🔒', // Security
+    '📊', // Analytics
+    '✉️', // Email
+    '📞', // Communication
+    '🎨', // Design
+    '🏠', // Home
+    '⭐', // Premium
   ];
-  
 }
