@@ -73,9 +73,9 @@ lib/
 
 ### Installation
 
-1. **Clone the repository**
-   ```Install APK
-   [@APK Link] https://github.com/racherim/flutter-subscription-tracker/releases/tag/non-production-release
+1. **Install APK**
+   ```
+   https://github.com/racherim/flutter-subscription-tracker/releases/tag/non-production-release
    ```
 ## 💡 How to Use
 
