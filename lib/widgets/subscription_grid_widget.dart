@@ -97,6 +97,8 @@ class _SubscriptionGridWidgetState extends State<SubscriptionGridWidget> {
                             price: subscription.price,
                             color: subscription.color,
                             icon: subscription.icon,
+                            id: subscription.id,
+                            onDelete: () => _deleteSubscription(subscription.id!),
                           );
                         },
                       ),
@@ -122,7 +124,35 @@ class _SubscriptionGridWidgetState extends State<SubscriptionGridWidget> {
       checkmarkColor: Colors.blue,
     );
   }
-  
+
+  Future<void> _deleteSubscription(int id) async {
+    try {
+      await SubscriptionContents.deleteSubscription(id);
+      _loadSubscriptions(); // Refresh the list after deletion
+      
+      // Show success message
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Subscription deleted successfully!'),
+            backgroundColor: Colors.green,
+            duration: Duration(seconds: 2),
+          ),
+        );
+      }
+    } catch (e) {
+      // Show error message
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Error deleting subscription: $e'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    }
+  }
+
   void refreshSubscriptions() {
     _loadSubscriptions();
   }
