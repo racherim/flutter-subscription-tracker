@@ -23,9 +23,8 @@ class _HomeState extends State<Home> {
           Positioned(
             bottom: 120,
             right: 16,
-            child: const AddSubscriptionWidget(),
+            child: AddSubscriptionWidget(),
           ),
-          
         ],
       ),
     );
