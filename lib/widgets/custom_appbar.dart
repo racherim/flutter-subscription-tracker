@@ -30,7 +30,6 @@ class _CustomAppbarState extends State<CustomAppbar> {
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: Row(
           children: [
-            // Category dropdown
             OutlinedButton(
               onPressed: () {},
               child: Row(

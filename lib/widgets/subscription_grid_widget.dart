@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_subscription_tracker/utils/subscription_contents.dart';
-import 'package:flutter_subscription_tracker/widgets/add_subscription_widget.dart';
 import 'package:flutter_subscription_tracker/widgets/average_expenses_widget.dart';
 import 'package:flutter_subscription_tracker/widgets/subscription_card_widget.dart';
 
-class MainMobile extends StatefulWidget {
-  const MainMobile({super.key});
+class SubscriptionGridWidget extends StatefulWidget {
+  const SubscriptionGridWidget({super.key});
 
   @override
-  State<MainMobile> createState() => _MainMobileState();
+  State<SubscriptionGridWidget> createState() => _SubscriptionGridWidgetState();
 }
 
-class _MainMobileState extends State<MainMobile> {
+class _SubscriptionGridWidgetState extends State<SubscriptionGridWidget> {
   String selectedCategory = 'Video & TV';
-  
 
   @override
   Widget build(BuildContext context) {
@@ -43,8 +41,6 @@ class _MainMobileState extends State<MainMobile> {
               },
             ),
           ),
-
-          AddSubscriptionWidget(),
           AverageExpensesWidget(),
         ],
       ),
