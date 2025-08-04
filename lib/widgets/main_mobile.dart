@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_subscription_tracker/utils/subscription_contents.dart';
+import 'package:flutter_subscription_tracker/widgets/add_subscription_widget.dart';
+import 'package:flutter_subscription_tracker/widgets/average_expenses_widget.dart';
 import 'package:flutter_subscription_tracker/widgets/subscription_card_widget.dart';
 
 class MainMobile extends StatefulWidget {
@@ -11,17 +13,12 @@ class MainMobile extends StatefulWidget {
 
 class _MainMobileState extends State<MainMobile> {
   String selectedCategory = 'Video & TV';
-  double get totalExpenses {
-    return subscriptions.fold(
-      0.0,
-      (sum, subscription) => sum + subscription['price'],
-    );
-  }
+  
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -47,69 +44,8 @@ class _MainMobileState extends State<MainMobile> {
             ),
           ),
 
-          // Add subscription button
-          Container(
-            width: double.infinity,
-            height: 56,
-            margin: const EdgeInsets.symmetric(vertical: 16),
-            child: ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.black,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(28),
-                ),
-              ),
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.add, color: Colors.white),
-                  SizedBox(width: 8),
-                  Text(
-                    'Add subscription',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-
-          // Average expenses
-          Container(
-            padding: const EdgeInsets.all(16),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Average expenses',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    Text(
-                      'per month',
-                      style: TextStyle(fontSize: 14, color: Colors.grey),
-                    ),
-                  ],
-                ),
-                Text(
-                  '\$${totalExpenses.toStringAsFixed(2)}',
-                  style: const TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-          ),
+          AddSubscriptionWidget(),
+          AverageExpensesWidget(),
         ],
       ),
     );

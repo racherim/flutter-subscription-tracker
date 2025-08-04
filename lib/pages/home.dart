@@ -16,7 +16,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: PageStyle().backgroundColor,
       appBar: const CustomAppbar(),
-      body: MainMobile(),
+      body: const MainMobile(),
     );
   }
 }
