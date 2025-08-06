@@ -1,101 +1,77 @@
-# Flutter Subscription Tracker 📱💳
+# 📱 Subscription Tracker - Flutter Application with SQLite Integration
 
-A modern and intuitive Flutter app for tracking your monthly subscriptions and managing your recurring expenses. Built with a clean UI inspired by popular subscription management apps.
+🚀 **Features**
 
-## ✨ Features
+- Create and manage subscription services
+- SQLite local storage
+- Real-time expense calculation
+- Category filtering system
+- One-tap deletion with confirmation
+- Responsive design for mobile devices
 
-- **📊 Visual Dashboard**: Grid-based layout displaying all your subscriptions with custom colors and icons
-- **💰 Expense Tracking**: Automatic calculation of total monthly costs
-- **🗂️ Category Filtering**: Filter subscriptions by categories (Video & TV, Music, Gaming, etc.)
-- **➕ Easy Adding**: Simple form to add new subscriptions with custom details
-- **🗑️ Quick Deletion**: One-tap delete with confirmation dialog
-- **💾 Persistent Storage**: SQLite database for offline data storage
-- **🎨 Beautiful UI**: Custom app bar, floating action button, and responsive design
+📦 **Downloads**
 
-## 📱 Screenshots
+- Android APK: [Download APK](https://github.com/racherim/flutter-subscription-tracker/releases/tag/non-production-release)
+- Source Code: [GitHub Repository](https://github.com/racherim/flutter-subscription-tracker)
 
-The app features a clean, card-based interface similar to popular subscription management apps like "ReSubs", with:
-- Colorful subscription cards showing service name, price, and custom icons
-- Category filter chips for easy browsing
-- Total monthly expense summary at the bottom
-- Floating action button for adding new subscriptions
+� **What's New**
 
-## 🛠️ Technical Stack
+- Initial release
+- SQLite database integration
+- Category-based filtering
+- Custom subscription cards with colors and icons
+- Monthly expense tracking
+- Intuitive add/delete functionality
 
-- **Framework**: Flutter 3.x
+� **Installation**
+
+**Android Installation**
+
+1. **Download**: Click the Download APK link above
+2. **Enable Installation**: Go to Android Settings > Security > Enable "Unknown Sources"
+3. **Install**: Open the downloaded APK file and install
+4. **Launch**: Find "Subscription Tracker" in your app drawer
+
+**Development Setup**
+
+```bash
+git clone https://github.com/racherim/flutter-subscription-tracker.git
+cd flutter-subscription-tracker
+flutter pub get
+flutter run
+```
+
+🛠️ **Technical Details**
+
+- **Framework**: Flutter 3.16+
 - **Database**: SQLite (sqflite package)
-- **State Management**: StatefulWidget with setState
-- **UI Components**: Material Design widgets
+- **Storage**: Local device storage
+- **Platforms**: Android
+- **Minimum Android**: API 21 (Android 5.0)
 
-## 📦 Dependencies
-
+**Dependencies:**
 ```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  cupertino_icons: ^1.0.8
-  sqflite: ^2.4.2
-  path: ^1.8.3
+sqflite: ^2.4.2
+path: ^1.8.3
 ```
 
-## 🗂️ Project Structure
+💡 **How to Use**
 
-```
-lib/
-├── main.dart                           # App entry point
-├── constant/
-│   └── pagestyle.dart                  # Theme and styling constants
-├── pages/
-│   └── home.dart                       # Main home page
-├── widgets/
-│   ├── add_subscription_widget.dart    # Add subscription dialog
-│   ├── average_expenses_widget.dart    # Monthly expense summary
-│   ├── custom_appbar.dart             # Custom app bar
-│   ├── main_mobile.dart               # Mobile layout wrapper
-│   ├── subscription_card_widget.dart  # Individual subscription card
-│   └── subscription_grid_widget.dart  # Grid layout for subscriptions
-├── utils/
-│   ├── subscription_contents.dart     # Data access layer
-│   ├── subscription_models.dart       # Subscription data model
-│   ├── subscription_genres_items.dart # Category definitions
-│   └── subscription_icons_items.dart  # Icon options
-└── services/
-    └── sqllite_service.dart           # Database service
-```
+**Adding Subscriptions**
+1. Tap the floating action button (+)
+2. Enter subscription name and monthly price
+3. Select category (Video & TV, Music, Gaming, etc.)
+4. Choose an icon and color
+5. Tap "Add" to save
 
-## 🚀 Getting Started
-
-### Prerequisites
-- Flutter SDK 3.0 or higher
-- Dart SDK 3.0 or higher
-- Android Studio / VS Code
-- Android emulator or physical device
-
-### Installation
-
-1. **Install APK**
-   ```
-   https://github.com/racherim/flutter-subscription-tracker/releases/tag/non-production-release
-   ```
-## 💡 How to Use
-
-### Adding a Subscription
-1. Tap the **floating action button (+)** at the bottom right
-2. Fill in the subscription details:
-   - **Name**: Service name (e.g., Netflix, Spotify)
-   - **Price**: Monthly cost
-   - **Category**: Select from predefined categories
-   - **Icon**: Choose an emoji icon
-   - **Color**: Pick a color for the card
-3. Tap **"Add"** to save
-
-### Managing Subscriptions
-- **View All**: See all subscriptions in a grid layout
+**Managing Subscriptions**
+- **View**: Browse all subscriptions in grid layout
 - **Filter**: Use category chips to filter by type
-- **Delete**: Tap the red × button on any card to delete
-- **Total Cost**: View monthly expense summary at the bottom
+- **Delete**: Tap red × button on any card
+- **Track**: View total monthly expenses at bottom
 
-### Categories Available
+🗂️ **Categories Available**
+
 - Video & TV
 - Music
 - Gaming
@@ -107,9 +83,23 @@ lib/
 - Food & Drink
 - Others
 
-## 🗄️ Database Schema
+� **Privacy & Security**
 
-The app uses SQLite with the following table structure:
+- All data stored locally on your device
+- No internet connection required
+- No data collection or tracking
+- Complete privacy and offline functionality
+
+🎨 **UI Components**
+
+- Clean, modern interface inspired by popular subscription apps
+- Colorful subscription cards with custom icons
+- Responsive 2-column grid layout
+- Category filter chips
+- Floating action button for quick adding
+- Confirmation dialogs for safe deletion
+
+🗄️ **Database Schema**
 
 ```sql
 CREATE TABLE subscriptions(
@@ -122,60 +112,22 @@ CREATE TABLE subscriptions(
 )
 ```
 
-## 🎨 UI Components
+🤝 **Contributing**
 
-- **Custom App Bar**: Clean header with category filters
-- **Subscription Cards**: Colorful cards with service info
-- **Grid Layout**: Responsive 2-column grid
-- **Filter Chips**: Easy category selection
-- **Floating Action Button**: Quick add functionality
-- **Dialogs**: Confirmation and input dialogs
-
-## 🔧 Customization
-
-### Adding New Categories
-Edit `lib/utils/subscription_genres_items.dart`:
-```dart
-static const List<String> items = [
-  'Video & TV',
-  'Music',
-  'Your New Category', // Add here
-];
-```
-
-### Adding New Icons
-Edit `lib/utils/subscription_icons_items.dart`:
-```dart
-static const List<String> items = [
-  '🎬', '🎵', '🎮',
-  '🆕', // Add new emoji here
-];
-```
-
-## 🤝 Contributing
+This is an open-source project. Feel free to contribute!
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+2. Create feature branch (`git checkout -b feature/NewFeature`)
+3. Commit changes (`git commit -m 'Add NewFeature'`)
+4. Push to branch (`git push origin feature/NewFeature`)
+5. Open Pull Request
 
-## 📄 License
+📄 **License**
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Flutter team for the amazing framework
-- Material Design for UI inspiration
-- SQLite for reliable local storage
-
-## 📞 Contact
-
-[@racherim](https://github.com/racherim)
-
-Project Link: [https://github.com/racherim/flutter-subscription-tracker](https://github.com/racherim/flutter-subscription-tracker)
+MIT License - see [LICENSE](LICENSE) file for details
 
 ---
+
+**Contact**: [@racherim](https://github.com/racherim) | **Project**: [flutter-subscription-tracker](https://github.com/racherim/flutter-subscription-tracker)
 
 ⭐ Star this repository if you found it helpful!
